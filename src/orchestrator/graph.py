@@ -6,7 +6,6 @@ initialize → analyze → extract → generate → approve → setup → verify
 """
 
 from langgraph.graph import StateGraph, START, END
-from langgraph.checkpoint.memory import MemorySaver
 
 from .state import OrchestratorState
 from .nodes import (
@@ -103,11 +102,10 @@ workflow.add_conditional_edges(
 # Add error handling edge
 workflow.add_edge("init", END)  # Allow early exit from init if errors
 
-# Compile the graph with memory checkpointer for Studio
+# Compile the graph for LangGraph Studio
+# LangGraph API handles persistence automatically, no custom checkpointer needed
 # This enables the graph to pause at interrupts (like human approval)
-memory = MemorySaver()
 graph = workflow.compile(
-    checkpointer=memory,
     interrupt_before=["approval"],  # Pause before approval node
 )
 
