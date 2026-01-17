@@ -1,50 +1,61 @@
 ╔════════════════════════════════════════════════════════════════╗
-║       🎨 LangGraph Studio - READY TO USE                       ║
+║     🎨 LangGraph Studio - READY (LangSmith Connected!)         ║
 ╚════════════════════════════════════════════════════════════════╝
 
-✅ Server Status: RUNNING
-✅ LangSmith: CONNECTED & TRACING
-✅ Port: 19999
-✅ Project: ai-template-engine
+✅ Server: RUNNING on port 19999
+✅ LangSmith: CONNECTED (metadata submitted successfully)
+✅ Tracing: ENABLED
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-🌐 CLICK TO OPEN STUDIO:
+🌐 TRY THESE STUDIO URLS (to fix UUID error):
 
+Option 1 (Recommended - try first):
+   https://smith.langchain.com/studio/?baseUrl=http://localhost:19999
+
+Option 2 (Alternative):
    https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:19999
 
+Option 3 (Direct IP):
+   https://smith.langchain.com/studio/?baseUrl=http://192.168.0.178:19999
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-📊 View Traces in LangSmith:
+🔍 Troubleshooting UUID Error:
+   - The UUID error is usually a CORS/origin issue
+   - Try "localhost" first (most compatible)
+   - If still errors, try clearing browser cache
+   - Check browser console for detailed error message
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 Direct API Access (to verify server is working):
+   curl http://localhost:19999/ok
+   # Should return: {"ok":true}
+
+   curl http://localhost:19999/info
+   # Shows server info
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 Once Connected in Studio:
+
+Initial State:
+{
+  "target_repo_path": "/tmp/ai-template-engine",
+  "harness_org_id": "default",
+  "harness_project_id": "AI_Orchestration",
+  "hitl_required": true
+}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📈 View Traces:
    https://smith.langchain.com/o/default/projects/p/ai-template-engine
 
-📡 API Endpoints:
-   • Health:  http://localhost:19999/ok
-   • Docs:    http://localhost:19999/docs
-   • API:     http://localhost:19999
-
-🔧 Server Management:
-   • Stop:    pkill -f "langgraph dev"
-   • Logs:    tail -f /tmp/ai-template-engine/langgraph.log
-   • PID:     cat /tmp/ai-template-engine/langgraph.pid
+🔧 Server Info:
+   • PID: cat /tmp/ai-template-engine/langgraph.pid
+   • Logs: tail -f /tmp/ai-template-engine/langgraph.log
+   • Stop: ss -tlnp | grep :19999  # find PID, then kill -9 <PID>
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-🎯 Quick Start:
-   1. Click the Studio URL above
-   2. Create a new thread
-   3. Paste this initial state:
-      {
-        "target_repo_path": "/tmp/ai-template-engine",
-        "harness_org_id": "default",
-        "harness_project_id": "AI_Orchestration",
-        "hitl_required": true
-      }
-   4. Click "Run" and watch your workflow!
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-📈 Workflow Phases:
-   init → analyze → extract → generate → ⏸approval → setup → verify
-
-All traces will be visible in LangSmith! 🚀
