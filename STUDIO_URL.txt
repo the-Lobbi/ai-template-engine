@@ -1,25 +1,50 @@
 ╔════════════════════════════════════════════════════════════════╗
-║          LangGraph Studio - Access Information                  ║
+║       🎨 LangGraph Studio - READY TO USE                       ║
 ╚════════════════════════════════════════════════════════════════╝
 
-✅ Server Running on Port: 19999
+✅ Server Status: RUNNING
+✅ LangSmith: CONNECTED & TRACING
+✅ Port: 19999
+✅ Project: ai-template-engine
 
-🌐 Studio Access URL (Click or Copy):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🌐 CLICK TO OPEN STUDIO:
 
    https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:19999
 
-📡 Server Details:
-   - Local:   http://localhost:19999
-   - Network: http://192.168.0.178:19999
-   - Docs:    http://localhost:19999/docs
-   - Health:  http://localhost:19999/ok
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 View Traces in LangSmith:
+   https://smith.langchain.com/o/default/projects/p/ai-template-engine
+
+📡 API Endpoints:
+   • Health:  http://localhost:19999/ok
+   • Docs:    http://localhost:19999/docs
+   • API:     http://localhost:19999
 
 🔧 Server Management:
-   - Stop:    pkill -f "langgraph dev"
-   - Logs:    tail -f /tmp/ai-template-engine/langgraph.log
-   - Restart: cd /tmp/ai-template-engine && source venv/bin/activate && langgraph dev --no-browser --port 19999 --host 0.0.0.0 > langgraph.log 2>&1 &
+   • Stop:    pkill -f "langgraph dev"
+   • Logs:    tail -f /tmp/ai-template-engine/langgraph.log
+   • PID:     cat /tmp/ai-template-engine/langgraph.pid
 
-📊 LangSmith Tracing: ENABLED
-   - Project: ai-template-engine
-   - View traces at: https://smith.langchain.com
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+🎯 Quick Start:
+   1. Click the Studio URL above
+   2. Create a new thread
+   3. Paste this initial state:
+      {
+        "target_repo_path": "/tmp/ai-template-engine",
+        "harness_org_id": "default",
+        "harness_project_id": "AI_Orchestration",
+        "hitl_required": true
+      }
+   4. Click "Run" and watch your workflow!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📈 Workflow Phases:
+   init → analyze → extract → generate → ⏸approval → setup → verify
+
+All traces will be visible in LangSmith! 🚀
